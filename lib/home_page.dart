@@ -45,9 +45,22 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(itemBuilder: (context, index) {
-        return Feed();
-      }),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16), //가로방향에만 패딩추가
+        child: ListView.separated(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12), //세로방향에만 패딩추가
+              child: Feed(),
+            );
+          },
+          separatorBuilder: (context, index) {
+            //사이에 가로선 넣기
+            return Divider();
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Color(0xFFFF7E36),
