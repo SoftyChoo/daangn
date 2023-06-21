@@ -60,6 +60,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start, //행끼리 정렬
         children: [
           // CilpRRect 를 통해 이미지에 곡선 border 생성
           ClipRRect(
@@ -71,10 +72,12 @@ class HomePage extends StatelessWidget {
               height: 100,
               fit: BoxFit.cover,
             ),
-          ), // 이미지 들어갈 자리
+          ),
+          SizedBox(width: 12), //사진과 글 사이에 여백 넣기
           Expanded(
             //남은 공간만큼만 자리를 차지하도록 설정
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start, //열끼리 정렬
               children: [
                 Text(
                   'M1 아이패드 프로 11형(3세대) 와이파이 128G 팝니다.',
