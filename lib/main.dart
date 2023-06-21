@@ -72,19 +72,45 @@ class HomePage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ), // 이미지 들어갈 자리
-          Column(
-            children: [
-              // 'M1 아이패드 프로 11형(3세대) 와이파이 128G 팝니다.'
-              // '봉천동 · 6분 전'
-              // '100만원'
-              Row(
-                children: [
-                  // 빈 칸
-                  // 하트 아이콘
-                  // '1'
-                ],
-              ),
-            ],
+          Expanded(
+            //남은 공간만큼만 자리를 차지하도록 설정
+            child: Column(
+              children: [
+                Text(
+                  'M1 아이패드 프로 11형(3세대) 와이파이 128G 팝니다.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ),
+                  softWrap: false,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 2),
+                Text(
+                  '봉천동 · 6분 전',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black45,
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  '100만원',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Row(
+                  children: [
+                    // 빈 칸
+                    // 하트 아이콘
+                    // '1'
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
