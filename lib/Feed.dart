@@ -3,10 +3,18 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Feed extends StatelessWidget {
+class Feed extends StatefulWidget {
   const Feed({
     super.key,
   });
+
+  @override
+  State<Feed> createState() => _FeedState();
+}
+
+class _FeedState extends State<Feed> {
+  // 좋아요 여부
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +69,19 @@ class Feed extends StatelessWidget {
                   Spacer(), //자기의 공간을 최대한 차지하고 나머지 밀어냄 [스페이서+하트+숫자]이렇게 돼있는거임
                   GestureDetector(
                     //눌렀을 때 특정 동작을 하게 하는 위젯(버튼화)
-                    onTap: () {},
+                    onTap: () {
+                      // 화면 갱신
+                      setState(() {
+                        isFavorite = !isFavorite; // 좋아요 토글
+                      });
+                    },
                     child: Row(
                       children: [
                         Icon(
-                          CupertinoIcons.heart,
-                          color: Colors.black54,
-                          size: 16,
+                          isFavorite
+                              ? CupertinoIcons.heart_fill
+                              : CupertinoIcons.heart,
+                          color: isFavorite ? Colors.pink : Colors.black,
                         ),
                         Text(
                           '1',
