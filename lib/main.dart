@@ -107,15 +107,74 @@ class HomePage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    // 빈 칸
-                    // 하트 아이콘
-                    // '1'
+                    Spacer(), //자기의 공간을 최대한 차지하고 나머지 밀어냄 [스페이서+하트+숫자]이렇게 돼있는거임
+                    GestureDetector(
+                      //눌렀을 때 특정 동작을 하게 하는 위젯(버튼화)
+                      onTap: () {},
+                      child: Row(
+                        children: [
+                          Icon(
+                            CupertinoIcons.heart,
+                            color: Colors.black54,
+                            size: 16,
+                          ),
+                          Text(
+                            '1',
+                            style: TextStyle(color: Colors.black54),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ],
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xFFFF7E36),
+        elevation: 1,
+        child: Icon(
+          Icons.add_rounded,
+          size: 36,
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.black,
+        unselectedItemColor: Colors.black,
+        showUnselectedLabels: true,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        iconSize: 28,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: '홈',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.my_library_books_outlined),
+            label: '동네생활',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fmd_good_outlined),
+            label: '내 근처',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.chat_bubble_2),
+            label: '채팅',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outline,
+            ),
+            label: '나의 당근',
+          ),
+        ],
+        currentIndex: 0,
       ),
     );
   }
