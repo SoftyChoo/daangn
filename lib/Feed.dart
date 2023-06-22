@@ -87,7 +87,7 @@ class _FeedState extends State<Feed> {
                           color: isFavorite ? Colors.pink : Colors.black,
                         ),
                         Text(
-                          '1',
+                          isFavorite ? '1' : '0',
                           style: TextStyle(color: Colors.black54),
                         ),
                       ],
